@@ -1,16 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
 <head>
-  <meta  charset="utf-8">
-  <title>Kick-Off-2</title>
-  <script src="js/countdown.js"></script>
+  <title>Kick-Off-Two</title>
+  </script>
 </head>
 
-<body>
-  <p>Click to enter the event</p>
-  <button onclick="myFunction()">Click</button>
-  <p id="result"></p>
-</body>
+<style media="screen">
+  body{
+    text-align: center;
+  }
+</style>
 
+<body>
+  <h1>Kick-Off-Two</h1>
+  <form>
+    <label>Event Name : </label>
+    <div class="">
+      <input type="text" name="name" id="event_name" value="">
+    </div>
+    <label>Event Date : </label>
+    <div class="">
+      <input type="date" name="date" id="event_date" value="">
+    </div>
+  </form>
+  <div class="">
+    <button type="button" name="button" onclick="myFunction()">Submit</button>
+  </div>
+  <h1 id="result"></h1>
+</body>
+<script src="js/countdown.js"></script>
 </html>

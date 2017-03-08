@@ -1,12 +1,8 @@
-var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
-
 function myFunction() {
-  var today = new Date();
-  var date = prompt("Please enter date.", today.getDate()+"-"+monthNames[today.getMonth()]+"-"+today.getFullYear());
-  if (date != null) {
-    x = "Hello! You have entered date as: " + date;
-    var countDownDate = new Date(x);
-    var x = setInterval(function() {
+    var event_name = document.getElementById("event_name").value;
+    var event_date = document.getElementById("event_date").value;
+    var countDownDate = new Date(event_date);
+    var interval = setInterval(function() {
       var now = new Date();
       var distance = countDownDate - now;
       var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -14,14 +10,12 @@ function myFunction() {
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      document.getElementById("result").innerHTML = days + "Days " + hours + "Hours " +
-       minutes + "Minuutes " + seconds + "Seconds left till the kick off day";
+      document.getElementById("result").innerHTML = "<p> " + days + " Days " + hours + " Hours " +
+       minutes + " Minuutes " + seconds + " Seconds left till " + "<span style='color:red'>" + event_name + " </span> day!</p>";
 
       if (distance < 0) {
-        clearInterval(x);
+        clearInterval(interval);
         document.getElementById("result").innerHTML = "Kick-Off";
       }
     }, 1000);
-    // document.getElementById("result").innerHTML = x;
-  }
 }
